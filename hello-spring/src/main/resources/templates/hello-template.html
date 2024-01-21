@@ -1,0 +1,9 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<p th:text="'hello ' + ${name}">hello! empty</p>
+<!--
+절대경로를 웹 브라우저에 입력하면 hello! empty가 뜸. thymeleaf의 장점은 html을 그대로 서버없이 열어봐도 껍데기를 볼 수 있다는 것이다.
+그런데 이 html이 템플릿 엔진으로 동작(서버를 통해 동작)하면 hello! empty가 'hello ' + ${name}로 치환된다.
+-->
+</body>
+</html>
