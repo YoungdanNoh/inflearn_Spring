@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>static content</title>
+</head>
+<body>
+정적 컨텐츠 입니다.
+</body>
+</html>
+<!-- 정적 파일이 그대로 반환됨. 어떠한 프로그래밍은 할 수 없다. -->
+
+<!--
+*정적 컨텐츠가 돌아가는 방식*
+1. 웹 브라우저에서 http://localhost:8080/hello-static.html을 치면 내장 톰캣 서버가 이 요청을 받는다.
+2. 내장 톰캣 서버는 이 요청을 스프링에 넘긴다.
+3. 스프링은 hello-static 관련된 컨트롤러가 있는지 찾아본다.
+4. 만약 맵핑된 컨트롤러가 없다면 resources: static 내부에 있는 hello-static.html을 찾는다.
+5. 해당 hello-static.html이 있으므로 그것을 웹 브라우저에 반환해준다.
+-->
