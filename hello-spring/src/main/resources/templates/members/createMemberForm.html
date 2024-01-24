@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+    <form action="/members/new" method="post">
+        <div class="form-group">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" placeholder="이름을 입력하세요">
+            <!-- name 속성의 값이 서버로 넘어올 때 키가 됨 -->
+            <!-- name="name"으로 해주어야 MemberForm에 있는 name 변수와 잘 매칭된다.(스프링이 해주는 것이므로...) -->
+            <!-- name="a"로 하면 정상 작동X -->
+        </div>
+        <button type="submit">등록</button>
+    </form>
+</div><!-- /container -->
+</body>
+</html>

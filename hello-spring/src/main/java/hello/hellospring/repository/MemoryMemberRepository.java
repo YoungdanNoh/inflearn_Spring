@@ -1,9 +1,11 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+//@Repository
 public class MemoryMemberRepository implements MemberRepository{
     
     private static Map<Long, Member> store = new HashMap<>(); // 실무에서는 동시성 문제로 다른 방식을 사용함.
@@ -25,7 +27,7 @@ public class MemoryMemberRepository implements MemberRepository{
     public Optional<Member> findByName(String name) {
         return store.values().stream()
                 .filter(member -> member.getName().equals(name))
-                .findAny(); // 이름이 같은 다른 사람의 정보가 조회될 수 있지 않을까?
+                .findAny();
     }
 
     @Override
