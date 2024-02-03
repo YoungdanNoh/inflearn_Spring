@@ -2,7 +2,7 @@
 > 운영체제: Windows 11 <br>
 > IDE: IntelliJ <br>
 > 자바: 17 <br>
-> 데이터베이스: h2 <br>
+> 데이터베이스: [h2](https://www.h2database.com/html/main.html) <br>
 > 스프링 부트 프로젝트: [spring initializr](https://start.spring.io/)로 생성 <br>
 > 내용 정리: [내 velog](https://velog.io/@noh_level0/posts)
 
