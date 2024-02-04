@@ -1,11 +1,9 @@
 package hello.hellospring;
 
 
-import hello.hellospring.repository.JdbcMemberRepository;
-import hello.hellospring.repository.JdbcTemplateMemberRepository;
-import hello.hellospring.repository.MemberRepository;
-import hello.hellospring.repository.MemoryMemberRepository;
+import hello.hellospring.repository.*;
 import hello.hellospring.service.MemberService;
+import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,10 +19,17 @@ public class SpringConfig {
     //@Autowired DataSource dataSource;
     //스프링으로 DataSource를 제공받는 첫번째 방법
 
-    DataSource dataSource;
+    /*DataSource dataSource;
 
     public SpringConfig(DataSource dataSource){ //DI
         this.dataSource = dataSource;
+    }*/
+
+    EntityManager em;
+
+    @Autowired
+    public SpringConfig(EntityManager em){
+        this.em = em;
     }
 
     @Bean
@@ -42,6 +47,8 @@ public class SpringConfig {
         // 개방-폐쇄 원칙(OCP, Open-Closed Principle): 확장에는 열려있고, 수정, 변경에는 닫혀있다.
         // 스프링의 DI(Dependencies Injection)을 사용하면 기존 코드를 전혀 손대지 않고, 설정만으로 구현 클래스를 변경할 수 있다.
 
-        return new JdbcTemplateMemberRepository(dataSource);
+        //return new JdbcTemplateMemberRepository(dataSource);
+
+        return new JpaMemberRepository(em);
     }
 }
